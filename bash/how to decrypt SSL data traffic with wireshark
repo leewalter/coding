@@ -1,0 +1,18 @@
+Pls see the KM doc I wrote for Oracle when I worked there
+"How to Decrypt and View SSL Snoop Data With Wireshark for Oracle iPlanet Web Server (Doc ID 1455999.1)"
+
+simply speaking
+1/ get the rsa private keys from the SSL web server 
+2/ format it to pkcs12 export format
+3/ import it into wireshark
+4/ start capture the SSL tcpdump data packets and then stop when done
+5/ configure wireshark to read the RSA private key 
+6/ read the decrypted contents 
+
+ref: https://wiki.wireshark.org/SampleCaptures
+then search for "SSL with decryption keys"
+
+"SSL with decryption keys
+File: snakeoil2_070531.tgz 
+Description: Example of SSL encrypted HTTPS traffic and the key to decrypt it. (example taken from the dev mailinglist)
+"
