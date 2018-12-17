@@ -1,0 +1,47 @@
+# simple regex demo
+
+===================================================================
+#!/bin/bash
+set -e 
+phone_regex="^[2-9][0-9]{2}-[0-9]{3}-[0-9]{4}$" # e.g. 212-666-1234, do NOT use like "^[2-9]\d{2}-\d{3}-\d{4}$" -> always no match !
+
+check_phone() {
+  local phone=$1
+  if [ -z "$phone" ]; then
+    printf "phone is NULL\n"
+  else
+    printf "phone entered is $phone;  checked : "
+    if [[ $phone =~ $phone_regex ]]; then
+      printf "$phone is valid in USA\n"
+    else
+      printf "$phone is NOT valid in USA\n"
+    fi
+  fi
+ }
+ 
+ # below is valid
+ check_phone "212-234-2345"  # do not use () because no output when run in another shell
+ #below is NOT valid
+ check_phone "123-456-7890"
+ #below is NOT valid
+ check_phone "415-456-789"
+ 
+
+===================================================================
+
+ref:  
+http://www.newthinktank.com/2016/06/shell-scripting-tutorial/
+https://stackoverflow.com/questions/27776665/echo-output-to-terminal-within-function-in-bash
+
+notes:
+tried other fancier regex but no matchin bash,
+e.g. "^[2-9]\d{2}-\d{3}-\d{4}$" -> always no match ! 
+
+==================================================================
+outputs:
+
+cloudshell:~/bash/test (salt-225402)$ ./regex3.bash
+phone entered is 212-234-2345;  checked : 212-234-2345 is valid in USA
+phone entered is 123-456-7890;  checked : 123-456-7890 is NOT valid in USA
+phone entered is 415-456-789;  checked : 415-456-789 is NOT valid in USA
+      
