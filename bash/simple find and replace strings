@@ -1,0 +1,34 @@
+# below is simple search and then replace with sed
+# example I got some *.yaml files with another "projectId: gcp-demo-200100" I need to replace it to "projectId: salt-225402"
+
+#!/bin/bash
+set -e
+
+for f in `ls *.yaml`
+do
+  sed -e 's/projectId: walter-terraform/projectId: salt-225402/g' $f > $f.salt-225402
+done  
+  
+  
+e.g.
+cloudshell:~/bash/test/hello-go (salt-225402)$ grep "projectId: walter-terraform" *.yaml
+skaffold.yaml:    projectId: walter-terraform
+skaffold.yaml:        projectId: walter-terraform
+
+then run the script,
+
+cloudshell:~/bash/test/hello-go (salt-225402)$ grep "projectId: salt-225402" *.yaml.*
+skaffold.yaml.salt-225402:    projectId: salt-225402
+skaffold.yaml.salt-225402:        projectId: salt-225402
+
+cloudshell:~/bash/test/hello-go (salt-225402)$ diff skaffold.yaml.salt-225402 skaffold.yaml
+7c7
+<     projectId: salt-225402
+---
+>     projectId: walter-terraform
+16c16
+<         projectId: salt-225402
+---
+>         projectId: walter-terraform
+
+ref: http://sed.sourceforge.net/sed1line.txt
