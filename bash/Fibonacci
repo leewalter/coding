@@ -1,0 +1,35 @@
+# https://www.geeksforgeeks.org/fibonacci-series-bash/
+
+# Program for Fibonacci 
+# Series 
+
+# Static input fo N 
+N=10
+
+# First Number of the 
+# Fibonacci Series 
+a=0 
+
+# Second Number of the 
+# Fibonacci Series 
+b=1 
+
+echo "The Fibonacci series is : "
+
+for (( i=0; i<N; i++ )) 
+do
+	echo -n "$a "
+	fn=$((a + b)) 
+	a=$b 
+	b=$fn 
+done
+echo "" # to give a newline for next prompt
+# End of for loop 
+
+=====================================================
+output:
+
+cloudshell:~/bash/test (salt-225402)$ ./fibonacci.bash 
+The Fibonacci series is :
+0 1 1 2 3 5 8 13 21 34
+
