@@ -1,0 +1,22 @@
+# simple load testing on a web server
+# control+C to stop 
+
+#!/bin/bash
+set -e 
+
+while [ true ]
+do
+  printf "\ndate is `date`\n"
+  curl https://postman-echo.com/get?foo1=bar1&foo2=bar2
+  sleep 5
+done  
+
+===========================================================
+output is 
+
+cloudshell:~/bash/test (salt-225402)$ ./while-curl.bash
+date is Sun Dec 16 22:30:01 PST 2018
+{"args":{"foo1":"bar1"},"headers":{"x-forwarded-proto":"https","host":"postman-echo.com","accept":"*/*","user-agent":"curl/7.52.1","x-forwarded-port":"443"},"url":"https://postman-echo.com/get?foo1=bar1"}
+date is Sun Dec 16 22:30:06 PST 2018
+{"args":{"foo1":"bar1"},"headers":{"x-forwarded-proto":"https","host":"postman-echo.com","accept":"*/*","user-agent":"curl/7.52.1","x-forwarded-port":"443"},"url":"https://postman-echo.com/get?foo1=bar1"}
+...
