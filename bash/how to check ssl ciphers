@@ -1,7 +1,9 @@
 # see how to check TLS/SSL ciphers for FTP/TLS
+# add openssl s_client option -showcerts if like to check SSL certs
 # ref - 
 # https://en.wikipedia.org/wiki/FTPS
 # https://www.securityevaluators.com/using-openssl-determine-ciphers-enabled-server/
+# add openssl s_client option -showcerts if like to check SSL certs
 # below in the code, 
 # v is the protocol
 # c is the ciphers list in your openssl lib
@@ -41,7 +43,7 @@ Expansion: NONE
 No ALPN negotiated
 SSL-Session:
     Protocol  : TLSv1.2
-    Cipher    : DHE-RSA-AES256-GCM-SHA384 *** a;so here !!
+    Cipher    : DHE-RSA-AES256-GCM-SHA384 <---*** also here !!
     Session-ID: 7D54D3B6D9DB81A...ECE85AEDBAF2F6988748
     Session-ID-ctx:
     Master-Key: A2FF97C8FABEE...94BF6DF3B240C271B79D2CAD0
@@ -71,3 +73,29 @@ SITE az2z
 200 Az2z flag is set for your next upload
 ...
 ...
+
+================================================================================
+list of supported ciphers at a major CDN ftp upload site:
+
+@cloudshell:~ (salt-225402)$ chmod a+x check-akamai-ciphers.bash
+@cloudshell:~ (salt-225402)$ ./check-akamai-ciphers.bash
+tls1:   DHE-RSA-AES256-SHA
+tls1:   DHE-RSA-AES128-SHA
+tls1:   AES256-SHA
+tls1:   AES128-SHA
+tls1_1: DHE-RSA-AES256-SHA
+tls1_1: DHE-RSA-AES128-SHA
+tls1_1: AES256-SHA
+tls1_1: AES128-SHA
+tls1_2: DHE-RSA-AES256-GCM-SHA384
+tls1_2: DHE-RSA-AES128-GCM-SHA256
+tls1_2: DHE-RSA-AES256-SHA256
+tls1_2: DHE-RSA-AES128-SHA256
+tls1_2: DHE-RSA-AES256-SHA
+tls1_2: DHE-RSA-AES128-SHA
+tls1_2: AES256-GCM-SHA384
+tls1_2: AES128-GCM-SHA256
+tls1_2: AES256-SHA256
+tls1_2: AES128-SHA256
+tls1_2: AES256-SHA
+tls1_2: AES128-SHA
