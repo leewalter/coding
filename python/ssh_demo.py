@@ -1,3 +1,4 @@
+# ref at https://gist.github.com/leewalter/17753a18495095e1ef8768fe3c761869
 #!/usr/bin/env python
 
 import sys, paramiko
@@ -16,7 +17,7 @@ port = 22
 try:
     client = paramiko.SSHClient()
     client.load_system_host_keys()
-# see doc at http://docs.paramiko.org/en/2.4/api/client.html    
+# see doc at http://docs.paramiko.org/en/2.4/api/client.html  for missing host key policies  
 #    client.set_missing_host_key_policy(paramiko.WarningPolicy)
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy)
 
