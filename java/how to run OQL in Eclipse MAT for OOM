@@ -1,0 +1,14 @@
+how to run OQL for long running threads or matching some keywords in tomcat servers ,
+
+e.g.   all threads and request below, 
+SELECT toString(info.workerThreadName), toString(info.req.queryMB.byteC.buff) FROM org.apache.coyote.RequestInfo info
+
+others,
+select * from java.lang.String s where toString(s) Like ".*forward.*"
+
+SELECT toString(info.workerThreadName), toString(info.req.queryMB.byteC.buff), info.processingTime FROM org.apache.coyote.RequestInfo info WHERE (info.processingTime > 20000)
+
+SELECT toString(info.workerThreadName), toString(info.req.queryMB.byteC.buff), info.processingTime FROM org.apache.coyote.RequestInfo info WHERE (info.processingTime > 0)
+
+https://tomcat.apache.org/tomcat-7.0-doc/api/org/apache/catalina/valves/AccessLogValve.html
+%D - Time taken to process the request, in millis
