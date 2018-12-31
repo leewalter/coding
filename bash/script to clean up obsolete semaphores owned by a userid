@@ -1,0 +1,64 @@
+Script to clean up obsolete semaphores owned by an userid (e.g. Apache not stopped gracefully, or crashed, etc.. 
+then left behind obsolete semaphores)
+
+==================================BEGIN SCRIPT===================================================================
+$ cat check-and-remove-obsolete-semaphores.sh
+#!/bin/sh
+echo "this script it to run as uid=uid1 to remove any obsolete semaphores which do not have any running processes any more."
+echo "check summary before cleanup"
+ipcs -u
+
+for s in `ipcs  -s -t | grep uid1 | awk '{print $1}'`
+do
+echo "========================================"
+PID="NULL"
+COUNT="0"
+echo "semaphore id is $s"
+PID=`ipcs -s -i $s | tail -n2  | head -n1 | awk '{print $NF}'`
+echo "PID is $PID"
+ps -ef | grep -v grep | grep $PID
+COUNT=`ps -ef | grep -v grep | grep $PID|wc -l`
+if [ "$COUNT" == "0" ]; then
+        echo "removing obsolete semaphores $s whose PID $PID does not exist any more !"
+                ipcrm -s $s
+fi
+echo "========================================"
+done
+
+echo "check summary after cleanup"
+ipcs -u
+
+==================================END SCRIPT===================================================================
+
+e.g.
+$ ./check-and-remove-obsolete-semaphores.sh | tee check-and-remove-obsolete-semaphores.sh.log
+
+check logs and removal, like below, we removed many obsolete-semaphores below, 
+
+$ cat check-and-remove-obsolete-semaphores.sh.log
+this script it to run as uid=uid1 to remove any obsolete semaphores which do not have any running processes any more.
+check summary before cleanup
+
+------ Messages Status --------
+allocated queues = 0
+used headers = 0
+used space = 0 bytes
+
+------ Shared Memory Status --------
+segments allocated 38
+pages allocated 11242
+pages resident  113
+pages swapped   10891
+Swap performance: 0 attempts     0 successes
+
+------ Semaphore Status -------- **** before 
+used arrays = 66 
+allocated semaphores = 73
+
+========================================
+semaphore id is 1167425537
+PID is 17487
+removing obsolete semaphores 1167425537 whose PID 17487 does not exist any more !
+========================================
+....
+
