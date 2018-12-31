@@ -1,0 +1,45 @@
+how to find out the request details inside the offending OOM leak suspect thread
+
+tomcat stores request details at
+info.req.queryMB.byteC.buff
+
+e.g.
+http://grokbase.com/t/tomcat/dev/11ap00zfqz/svn-commit-r1187812-5-8-in-tomcat-trunk-modules-tomcat-lite-java-org-apache-coyote-lite-java-org-apache-tomcat-lite-http-java-org-apache-tomcat-lite-io-java-org-apache-tomcat-lite-io-jsse-java-org-apache-tomcat-lite-proxy-java-org-apache/oldest
+
+=====================
+to get request object in tcserver,
+
+SELECT toString(info.workerThreadName), toString(info.req.queryMB.byteC.buff) FROM org.apache.coyote.RequestInfo info 
+
+then find the request you like, http-32 in this case,
+
+copy OQL query value,
+(
+if you copy this value, then will be object id only,
+org.apache.coyote.RequestInfo @ 0x71af8d123(which is an address) but we need the object id instead.
+)
+
+e.g.
+SELECT toString(info.workerThreadName), toString(info.req.queryMB.byteC.buff) FROM OBJECTS 2267123 info
+
+then change it to 
+SELECT * FROM OBJECTS 2267123 info
+
+then org.apache.coyote.RequestInfo
+then req - org.apache.coyote.Request
+then queryMB - org.apache.tomcat.util.buf.MessageBytes
+then byteC - org.apache.tomcat.util.buf.ByteChunk
+then buff - byte[] then save value to a file , e.g. C:\Users\U123456\cases\APP1_OOM\test request save to a file http-32.txt
+
+It is always 25k bytes size so you can see the request details inside.
+
+e.g.
+GET /app1/path1/time123?usrType=agent HTTP/1.1
+accept:text/html, application/xhtml+xml, */**
+referer:https://xxx/referrer_url
+accept-language:en-USS
+user-agent:Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Geckoo
+accept-encoding:gzip, deflatee
+host:incoming_host.abc.com 
+....
+then they pad it with NULLs till 25k in size.
