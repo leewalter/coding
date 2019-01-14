@@ -1,0 +1,369 @@
+{
+  "id": "03d2ce7c-ff85-4e51-91e8-86d356716131",
+  "version": "1.1",
+  "name": "www-mortgage-rate1",
+  "url": "https://www.wellsfargo.com",
+  "tests": [{
+    "id": "2db6a5fc-3d97-42ba-a386-a81b37ec9f50",
+    "name": "wf-mortgage-rates1",
+    "commands": [{
+      "id": "ecefe47d-d8f2-453e-94ae-ead2a1141451",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "06abdcf3-6011-4197-a213-fc28fc913dab",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputTopSearchField",
+      "targets": [
+        ["id=inputTopSearchField", "id"],
+        ["name=q", "name"],
+        ["css=#inputTopSearchField", "css"],
+        ["css=#inputTopSearchField", "css:finder"],
+        ["xpath=//input[@id='inputTopSearchField']", "xpath:attributes"],
+        ["xpath=//div[@id='sp-results']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1045ff4-4ec4-4615-b130-31b189add2ff",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputTopSearchField",
+      "targets": [
+        ["id=inputTopSearchField", "id"],
+        ["name=q", "name"],
+        ["css=#inputTopSearchField", "css"],
+        ["css=#inputTopSearchField", "css:finder"],
+        ["xpath=//input[@id='inputTopSearchField']", "xpath:attributes"],
+        ["xpath=//div[@id='sp-results']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "home loan"
+    }, {
+      "id": "1c5b80f9-f825-4d8d-9576-ba0316996fca",
+      "comment": "",
+      "command": "submit",
+      "target": "id=frmSearch",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef0d78b9-9f85-4ce7-980a-00f190b5ae25",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home Loans and Home Financing – Wells Fargo",
+      "targets": [
+        ["linkText=Home Loans and Home Financing – Wells Fargo", "linkText"],
+        ["css=li:nth-child(2) > h2 > a", "css:finder"],
+        ["xpath=//div[@id='mainColumns']/div/div[2]/div[2]/ol/li[2]/h2/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.wellsfargo.com/mortgage/home-loans')]", "xpath:href"],
+        ["xpath=//li[2]/h2/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "89b5ceaf-7df9-499c-ae42-6345cf9b9ef4",
+      "comment": "",
+      "command": "click",
+      "target": "id=homeValue",
+      "targets": [
+        ["id=homeValue", "id"],
+        ["name=homeValue", "name"],
+        ["css=#homeValue", "css"],
+        ["css=#homeValue", "css:finder"],
+        ["xpath=//input[@id='homeValue']", "xpath:attributes"],
+        ["xpath=//div[@id='homeValue_row']/span[2]/input", "xpath:idRelative"],
+        ["xpath=//span[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca2127d1-dbfc-47f7-aca9-bd714db87dea",
+      "comment": "",
+      "command": "type",
+      "target": "id=homeValue",
+      "targets": [
+        ["id=homeValue", "id"],
+        ["name=homeValue", "name"],
+        ["css=#homeValue", "css"],
+        ["css=#homeValue", "css:finder"],
+        ["xpath=//input[@id='homeValue']", "xpath:attributes"],
+        ["xpath=//div[@id='homeValue_row']/span[2]/input", "xpath:idRelative"],
+        ["xpath=//span[2]/input", "xpath:position"]
+      ],
+      "value": "1000000"
+    }, {
+      "id": "6a2b0dd6-5f5c-4b36-a8aa-56cb5033988b",
+      "comment": "",
+      "command": "type",
+      "target": "id=downPayment",
+      "targets": [
+        ["id=downPayment", "id"],
+        ["name=downPayment", "name"],
+        ["css=#downPayment", "css"],
+        ["css=#downPayment", "css:finder"],
+        ["xpath=//input[@id='downPayment']", "xpath:attributes"],
+        ["xpath=//div[@id='downPayment_row']/span[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/span[2]/input", "xpath:position"]
+      ],
+      "value": "300000"
+    }, {
+      "id": "970a9f29-61c6-4f08-aaf7-dafd9056d3f9",
+      "comment": "",
+      "command": "click",
+      "target": "id=RPC",
+      "targets": [
+        ["id=RPC", "id"],
+        ["css=#RPC", "css"],
+        ["css=#RPC", "css:finder"],
+        ["xpath=//div[@id='RPC']", "xpath:attributes"],
+        ["xpath=//div[@id='contentTop']/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f7a64cd-98ee-4a40-9d15-0d851dd88869",
+      "comment": "",
+      "command": "click",
+      "target": "id=propertyState",
+      "targets": [
+        ["id=propertyState", "id"],
+        ["name=state", "name"],
+        ["css=#propertyState", "css"],
+        ["css=#propertyState", "css:finder"],
+        ["xpath=//select[@id='propertyState']", "xpath:attributes"],
+        ["xpath=//div[@id='propertyLocation_row']/span[4]/select", "xpath:idRelative"],
+        ["xpath=//span[4]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2476d704-c345-4dce-8d1b-68ae7b020d0d",
+      "comment": "",
+      "command": "select",
+      "target": "id=propertyState",
+      "targets": [],
+      "value": "label=CA"
+    }, {
+      "id": "a2f284d9-6a22-40b4-9ab9-3fdd984d8d5a",
+      "comment": "",
+      "command": "click",
+      "target": "id=propertyState",
+      "targets": [
+        ["id=propertyState", "id"],
+        ["name=state", "name"],
+        ["css=#propertyState", "css"],
+        ["css=#propertyState", "css:finder"],
+        ["xpath=//select[@id='propertyState']", "xpath:attributes"],
+        ["xpath=//div[@id='propertyLocation_row']/span[4]/select", "xpath:idRelative"],
+        ["xpath=//span[4]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "be72bc4b-69b7-4eec-a167-47d09bdf4209",
+      "comment": "",
+      "command": "click",
+      "target": "id=propertyCounty",
+      "targets": [
+        ["id=propertyCounty", "id"],
+        ["name=county", "name"],
+        ["css=#propertyCounty", "css"],
+        ["css=#propertyCounty", "css:finder"],
+        ["xpath=//select[@id='propertyCounty']", "xpath:attributes"],
+        ["xpath=//div[@id='propertyLocation_row']/span[4]/select[2]", "xpath:idRelative"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2754b1c6-2de8-4672-9096-c96b4f57fdee",
+      "comment": "",
+      "command": "select",
+      "target": "id=propertyCounty",
+      "targets": [],
+      "value": "label=San Francisco"
+    }, {
+      "id": "cf5639b4-8a03-457b-81d9-810460e6bb58",
+      "comment": "",
+      "command": "click",
+      "target": "id=propertyCounty",
+      "targets": [
+        ["id=propertyCounty", "id"],
+        ["name=county", "name"],
+        ["css=#propertyCounty", "css"],
+        ["css=#propertyCounty", "css:finder"],
+        ["xpath=//select[@id='propertyCounty']", "xpath:attributes"],
+        ["xpath=//div[@id='propertyLocation_row']/span[4]/select[2]", "xpath:idRelative"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce0badae-4db9-4fc3-bb97-5dadba53d1ad",
+      "comment": "",
+      "command": "click",
+      "target": "id=NID1_13_1_2_4_1_3_2_2",
+      "targets": [
+        ["id=NID1_13_1_2_4_1_3_2_2", "id"],
+        ["name=submitButton", "name"],
+        ["css=#NID1_13_1_2_4_1_3_2_2", "css"],
+        ["css=#NID1_13_1_2_4_1_3_2_2", "css:finder"],
+        ["xpath=//input[@id='NID1_13_1_2_4_1_3_2_2']", "xpath:attributes"],
+        ["xpath=//form[@id='homeLendingCommand']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1da8071f-4db4-46b9-842f-b4b027f0c541",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=View Details >",
+      "targets": [
+        ["linkText=View Details >", "linkText"],
+        ["css=#hdr1 > a", "css"],
+        ["css=tr:nth-child(1) > #hdr1 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'View Details >')]", "xpath:link"],
+        ["xpath=//th[@id='hdr1']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/mortgage/rates/calculator/purchase-results/loan-details?prod=1')]", "xpath:href"],
+        ["xpath=//tbody/tr/th/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "977a4b35-acf9-4104-a55c-82368be19ab3",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,256)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34ee77cd-f7ac-477b-8f00-ad71cd9acd3a",
+      "comment": "",
+      "command": "click",
+      "target": "id=creditScore",
+      "targets": [
+        ["id=creditScore", "id"],
+        ["name=creditScore", "name"],
+        ["css=#creditScore", "css"],
+        ["css=#creditScore", "css:finder"],
+        ["xpath=//select[@id='creditScore']", "xpath:attributes"],
+        ["xpath=//div[@id='loanOption']/ul/li[8]/select", "xpath:idRelative"],
+        ["xpath=//li[8]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1fdbef28-2967-4621-8232-223c4abbd4f1",
+      "comment": "",
+      "command": "select",
+      "target": "id=creditScore",
+      "targets": [],
+      "value": "label=Select Credit Score"
+    }, {
+      "id": "dd63b040-9cc3-46d2-9bf5-b59dc76a7de9",
+      "comment": "",
+      "command": "click",
+      "target": "id=creditScore",
+      "targets": [
+        ["id=creditScore", "id"],
+        ["name=creditScore", "name"],
+        ["css=#creditScore", "css"],
+        ["css=#creditScore", "css:finder"],
+        ["xpath=//select[@id='creditScore']", "xpath:attributes"],
+        ["xpath=//div[@id='loanOption']/ul/li[8]/select", "xpath:idRelative"],
+        ["xpath=//li[8]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ef5a839-e971-4b7e-9d42-07bd046fabcc",
+      "comment": "",
+      "command": "click",
+      "target": "id=Recalc",
+      "targets": [
+        ["id=Recalc", "id"],
+        ["name=submitButton", "name"],
+        ["css=#Recalc", "css"],
+        ["css=#Recalc", "css:finder"],
+        ["xpath=//input[@id='Recalc']", "xpath:attributes"],
+        ["xpath=//div[@id='loanOption']/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db42224e-8b30-416e-9826-80a57a20e5c6",
+      "comment": "",
+      "command": "click",
+      "target": "id=creditScore",
+      "targets": [
+        ["id=creditScore", "id"],
+        ["name=creditScore", "name"],
+        ["css=#creditScore", "css"],
+        ["css=#creditScore", "css:finder"],
+        ["xpath=//select[@id='creditScore']", "xpath:attributes"],
+        ["xpath=//div[@id='creditScore_row']/span[2]/select", "xpath:idRelative"],
+        ["xpath=//div[6]/span[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9374007-be7d-4057-97da-9253cffdc208",
+      "comment": "",
+      "command": "select",
+      "target": "id=creditScore",
+      "targets": [],
+      "value": "label=Excellent (760 and above)"
+    }, {
+      "id": "b4dc57ee-0ac2-4b58-8483-98ab9b51acd2",
+      "comment": "",
+      "command": "click",
+      "target": "id=creditScore",
+      "targets": [
+        ["id=creditScore", "id"],
+        ["name=creditScore", "name"],
+        ["css=#creditScore", "css"],
+        ["css=#creditScore", "css:finder"],
+        ["xpath=//select[@id='creditScore']", "xpath:attributes"],
+        ["xpath=//div[@id='creditScore_row']/span[2]/select", "xpath:idRelative"],
+        ["xpath=//div[6]/span[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4d67e10-2b0b-4f50-8297-2086f19e06ec",
+      "comment": "",
+      "command": "click",
+      "target": "id=NID1_14_1_1_4_1_3_2_2",
+      "targets": [
+        ["id=NID1_14_1_1_4_1_3_2_2", "id"],
+        ["name=submitButton", "name"],
+        ["css=#NID1_14_1_1_4_1_3_2_2", "css"],
+        ["css=#NID1_14_1_1_4_1_3_2_2", "css:finder"],
+        ["xpath=//input[@id='NID1_14_1_1_4_1_3_2_2']", "xpath:attributes"],
+        ["xpath=//form[@id='homeLendingCommand']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8cdf586b-382a-4e71-b131-729c823b4207",
+      "comment": "",
+      "command": "click",
+      "target": "id=NID1_14_2_1_1_1_1_3_1",
+      "targets": [
+        ["id=NID1_14_2_1_1_1_1_3_1", "id"],
+        ["linkText=Contact us", "linkText"],
+        ["css=#NID1_14_2_1_1_1_1_3_1", "css"],
+        ["css=#NID1_14_2_1_1_1_1_3_1", "css:finder"],
+        ["xpath=//a[contains(text(),'Contact us')]", "xpath:link"],
+        ["xpath=//a[@id='NID1_14_2_1_1_1_1_3_1']", "xpath:attributes"],
+        ["xpath=//div[@id='serviceModule']/div/p[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/mortgage/contact/?src=rpc_buy')])[2]", "xpath:href"],
+        ["xpath=//p[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "cae7ce6c-940d-421b-8e2c-bca9906fb354",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2db6a5fc-3d97-42ba-a386-a81b37ec9f50"]
+  }],
+  "urls": ["https://www.wellsfargo.com/"],
+  "plugins": []
+}
