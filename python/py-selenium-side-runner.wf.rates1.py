@@ -1,4 +1,5 @@
 # python to schedule and run it once an hour with "selenium-side-runner www-mortgage-rate1.side"
+# .side file at https://github.com/leewalter/coding/blob/master/python/www-mortgage-rate1.side
 
 import time, os
 
