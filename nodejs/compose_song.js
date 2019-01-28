@@ -1,6 +1,8 @@
 // nodejs to compose my FIRST song with code !
 // Walter-song1 based on https://github.com/scribbletune/scribbletune/blob/master/examples/bassline.js
 // npm install scribbletune
+// this song can be listened at 
+// https://soundcloud.com/user-894977529/walter-song1-composed-with-nodejs-code
 
 'use strict';
 
@@ -34,3 +36,6 @@ scribble.midi(clip, 'Walter-song1.mid');
 
 // This will create a file called music.mid in the same location as you run this script
 // Import this file in a music production software and play it with a bass synth
+
+// this song can be listened at 
+// https://soundcloud.com/user-894977529/walter-song1-composed-with-nodejs-code
