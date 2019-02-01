@@ -1,5 +1,44 @@
 # python to locate 1 in a 2D array
 
+#below save it into a dictionary
+
+# python to locate 1 in a 2D array
+
+def check_zero(array1):
+    d = {}
+    print("array index zeros at:")
+    for i in range(len(array1)):
+        index = [k for k, v in enumerate(array1[i]) if v == 0]
+        d[i] = index
+        #print(i, index)
+    #print(d)
+    return(d)
+
+array1 = [
+  [1, 1, 0, 0],
+  [0, 0, 1, 1],
+  [0, 1, 0, 1]
+]
+
+array2 = [
+  [1, 1, 0, 0, 0],
+  [0, 0, 1, 1, 0],
+  [0, 0, 1, 0, 1]
+]
+
+print(check_zero(array1))
+
+print(check_zero(array2))
+
+'''
+array index zeros at:
+{0: [2, 3], 1: [0, 1], 2: [0, 2]}
+array index zeros at:
+{0: [2, 3, 4], 1: [0, 1, 4], 2: [0, 1, 3]}
+'''
+
+
+# below is a function
 def check_zero(array1):
 
     print("array index zeros at:")
