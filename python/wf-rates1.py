@@ -1,6 +1,8 @@
 # very simple code to scrape Wells Fargo Mortgage Rates from html table
 # ref - https://www.youtube.com/watch?v=F1kZ39SvuGE
 # ref - https://github.com/engineer-man/youtube/tree/master/042
+# regex ref at www.newthinktank.com/2016/08/learn-program-16/
+# need to "pip install bs4" first
 
 
 import requests
@@ -21,12 +23,15 @@ tbody = mortgagetable.find('tbody')
 print ("%-30s %10s %10s" % ("productName", "intRate", "AprRate"))
 
 # print only if Jumbo loans
-jumboRegex = re.compile('Jumbo', re.IGNORECASE )
+#jumboRegex = re.compile('Jumbo', re.IGNORECASE )
+# below is regex for xx-year rates only , \d is any 1 digit
+xx_year_regex = re.compile('[\d]{2}-Year.*$')
 
 for tr in tbody.find_all('tr'):
     try:
         productName = tr.find_all('th')[0].find_all('a')[0].text.strip()
-        if jumboRegex.search(productName): 
+        #if jumboRegex.search(productName): 
+        if xx_year_regex.search(productName):
             intRate = tr.find_all('td')[0].text.strip()
             AprRate = tr.find_all('td')[1].text.strip()
             print ("%-30s %10s %10s" % (productName, intRate, AprRate))
@@ -58,5 +63,17 @@ productName                       intRate    AprRate
 15-Year Fixed-Rate Jumbo            3.75%     3.845%
 7/1 ARM Jumbo                        3.5%     4.443%
 10/1 ARM Jumbo                      3.75%     4.357%
+
+output 3 when use xx_year_regex, then below, 
+
+productName                       intRate    AprRate
+30-Year Fixed Rate                 4.375%      4.48%
+30-Year Fixed-Rate VA               4.25%     4.602%
+20-Year Fixed Rate                  4.25%     4.394%
+15-Year Fixed Rate                  3.75%      3.95%
+30-Year Fixed-Rate Jumbo           4.125%     4.158%
+15-Year Fixed-Rate Jumbo            3.75%     3.845%
+
+Process finished with exit code 0
 
 '''
