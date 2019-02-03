@@ -48,7 +48,8 @@ print(df)
 cvs_filename="D:\\github\\walter-repo\\coding\\python\\SF_weather-"+timestr+".csv"
 df.to_csv(cvs_filename)
 
-'''      date      day              desc     ...      precip    temp         wind
+'''      
+      date      day              desc     ...      precip    temp         wind
 0    FEB 2  Tonight   Rain/Wind Early     ...        100%   --50°  SSE 28 mph 
 1    FEB 3      Sun         Rain/Wind     ...         80%  53°47°  WSW 22 mph 
 2    FEB 4      Mon         Rain/Wind     ...         90%  49°43°  WSW 20 mph 
