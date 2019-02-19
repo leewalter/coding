@@ -1,8 +1,7 @@
 // nodejs to compose my FIRST song with code !
 // Walter-song1 based on https://github.com/scribbletune/scribbletune/blob/master/examples/bassline.js
 // npm install scribbletune
-// this song can be listened at 
-// https://soundcloud.com/user-894977529/walter-song1-composed-with-nodejs-code
+
 
 'use strict';
 
