@@ -1,56 +1,54 @@
-# simple python to find out the list of prime numbers
+# ref https://www.youtube.com/watch?v=2p3kwF04xcA&index=24&list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-
 
-def check_prime(n):
-    if ( n < 2 ):
-        print ("%d is not a prime no"  %n)
-        return 0
-    elif (n == 2):
-        print ("%d is a prime no"  %n)
-        return 1
-    for x in range(2,n):
-        #print(x)
-        if (n % x == 0):
-            print("%d is not a prime no because divisible by %d" %(n, x))
-            return 0
-    print ("%d is a prime no !" %n)
-    return 1
+import math
+import time
 
-prime_list = []
-for i in range(-1,50):
-    if i % 2 == 1 or i ==2 :
-        if (check_prime(i)):
-            prime_list.append(i)
+def is_prime_v2(n):
+    if n <= 0:
+        raise ("n must be a positive integer ! ")
+        return False
 
-print(prime_list)
+    if n == 1:
+        return False
+
+    elif n == 2:
+        return True
+
+    elif n % 2 == 0:
+        return False
+
+    elif n % 3 == 0:
+        return False
+
+    max_divisor = math.floor(math.sqrt(n))  # check half of the combinations
+    for d in range(5, max_divisor+1, 2):    # start from 5,7, etc..
+        if n % d == 0:
+            return False
+    return True
 
 '''
--1 is not a prime no
-1 is not a prime no
-2 is a prime no
-3 is a prime no !
-5 is a prime no !
-7 is a prime no !
-9 is not a prime no because divisible by 3
-11 is a prime no !
-13 is a prime no !
-15 is not a prime no because divisible by 3
-17 is a prime no !
-19 is a prime no !
-21 is not a prime no because divisible by 3
-23 is a prime no !
-25 is not a prime no because divisible by 5
-27 is not a prime no because divisible by 3
-29 is a prime no !
-31 is a prime no !
-33 is not a prime no because divisible by 3
-35 is not a prime no because divisible by 5
-37 is a prime no !
-39 is not a prime no because divisible by 3
-41 is a prime no !
-43 is a prime no !
-45 is not a prime no because divisible by 3
-47 is a prime no !
-49 is not a prime no because divisible by 7
-[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+for n in range(1,21):
+    print(n, is_prime_v2(n))
+'''
 
+t0 = time.time()
+for n in range(1,1000000):
+    is_prime_v2(n)
+
+t1 = time.time()
+print("time required for 1000000 :", t1-t0)
+
+#print("test raise ", is_prime_v2(-10))
+
+'''
+if use n % 2 == 0, then 
+time required for 1000000 : 9.644205331802368
+
+without above, then close timings,
+time required for 1000000 : 10.904832363128662
+
+if add % 2 and %3, then for d in range(5, max_divisor+1, 2):
+then half the time !
+
+time required for 1000000 : 5.761587858200073
 '''
