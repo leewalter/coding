@@ -1,4 +1,29 @@
 # ref - https://technobeans.com/2012/04/16/5-ways-of-fibonacci-in-python/
+# add lru_cache example 0
+
+# Example 0: using LRU Cache
+# https://www.youtube.com/watch?v=Qk0zUZW-U_M&list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-&index=18
+
+from functools import lru_cache
+
+@lru_cache(maxsize=1000)
+def fib(n):
+    if type(n) != int:
+        raise TypeError("n must be a positive integer, this is not an integer!")
+    if n < 1:
+        raise ValueError("n must be a positive integer")
+
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    elif n > 2:
+        return fib(n-1) + fib(n-2)
+
+'''
+for i in range(1,1001):
+    print (fib(i))
+'''
 
 ## Example 1: Using looping technique
 print("## Example 1: Using looping technique")
