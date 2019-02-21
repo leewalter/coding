@@ -2,8 +2,8 @@ import os
 import sys
 import re
 
-input_hostnames = open(r"C:\Users\abc\edge_hostnames1.txt", 'r')
-output_hostnames_cvs= open(r"C:\Users\abc\edge_hostnames1.cvs", 'w+')
+input_hostnames = open(r"C:\\Users\\abc\\edge.txt", 'r')
+output_hostnames_cvs= open(r"C:\\Users\\abc\\edge.cvs", 'w+')
 
 # regex to parse out all ".*" fields 
 item_regex = re.compile('"([^"]*)"')
@@ -36,7 +36,7 @@ for line in input_hostnames:
 ''' simple code to convert Akamai edge hostnames text table to a cvs file.
 
 inputs - a text file like below format
-D:\Akamai\CLI\akamai_pipeline>akamai property-manager leh -c "ctr_1-123456" -g "grp_123456"
+D:\abc>akamai property-manager leh -c "ctr_1-123456" -g "grp_123456"
 ╒═════════════╤═══════════════════════════════════════════════╤═══════════════╤═════════════════════╤════════╤═════════════════════════════════════════════════════════════╕
 │"ID"         │"Prefix"                                       │"Suffix"       │"IP Version Behavior"│"Secure"│"EdgeHostname Domain"                                        │
 ╞═════════════╪═══════════════════════════════════════════════╪═══════════════╪═════════════════════╪════════╪═════════════════════════════════════════════════════════════╡
