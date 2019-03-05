@@ -1,3 +1,4 @@
+# https://stackoverflow.com/questions/8508799/bit-masking-in-python
 # to test if bit 8 is set to see if big or small ediian
 
 def is_bit8_set(n):
