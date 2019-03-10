@@ -89,7 +89,7 @@ $ kill -SEGV 12345
 1st to find out what is the binary executable, 
 
 $ file core.12345
-core.12345: ELF 64-bit LSB core file x86-64, version 1 (SYSV), SVR4-style, from '-ksh', real uid: 2337, effective uid: 2337, real gid: 14207, effective gid: 14207, execfn: '/usr/bin/ksh', platform: 'x86_64'
+core.12345: ELF 64-bit LSB core file x86-64, version 1 (SYSV), SVR4-style, from '-ksh', real uid: 12345, effective uid: 12345, real gid: 15678, effective gid: 15678, execfn: '/usr/bin/ksh', platform: 'x86_64'
 
 make sure you use the right binary, ksh here, not sleep in my example !!!
 
@@ -140,8 +140,8 @@ $ kill -SIGBUS 29651
 [1] + Bus error                sleep 123 &
 
 $ ls -l core*
--rw------- 1 uid1 uid1 1007616 Sep  1  23:42 core.12345
--rw------- 1 uid1 uid1 1007616 Sep  1 14:26 core.26879
+-rw------- 1 uid1 gid1 1007616 Sep  1  23:42 core.12345
+-rw------- 1 uid1 gid1 1007616 Sep  1 14:26 core.26879
 
 $ kill -SIGILL 29754
 [1] + Illegal instruction      sleep 123 &
@@ -151,7 +151,7 @@ core
 
 why no coredump ?
 see 
-http://uid1.fromdual.com/hunting-the-core
+http://www.fromdual.com/hunting-the-core
 
 6/ also can gcore if needed to create a snapshot (to debug hung, etc.. before any restart)
 
@@ -165,9 +165,9 @@ $ pwd
 /xxx/xxx/xxx/users/uid1
 
 $ ls -lrt *core*
--rw------- 1 uid1 uid1 1007616 Sep  1 23:42 core.12345
--rw------- 1 uid1 uid1 1007616 Sep  1 14:26 core.26879
--rw-r--r-- 1 uid1 uid1  984664 Sep  1 15:12 core.31074
+-rw------- 1 uid1 gid1 1007616 Sep  1 23:42 core.12345
+-rw------- 1 uid1 gid1 1007616 Sep  1 14:26 core.26879
+-rw-r--r-- 1 uid1 gid1  984664 Sep  1 15:12 core.31074
 
 this can quick check the stack trace of a hung process, 
 
