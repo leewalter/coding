@@ -9,7 +9,7 @@ https://github.com/ktbyers/netmiko/blob/develop/examples/simple_connection/simpl
 import os, sys, re
 
 # if list from host1 to host100, then can generate them with list comprehension,
-#sample_host_list = [ "host"+str(i) for i in range(1,100)]
+#sample_host_list = [ "host"+str(i) for i in range(1,101)]
 #print(sample_host_list)
 
 hostlist = ["www.google.com", "www.yahoo.com", "www.nosuchxyz.com"]
@@ -62,7 +62,7 @@ Ping request could not find host www.nosuchxyz.com. Please check the name and tr
 so above will list ,
 
 D:\Python\Python37-32\python.exe D:/Go-workspace/walter/coding/python/pinghosts.py
-['host1', 'host2', 'host3', 'host4', 'host5', 'host6', 'host7', 'host8', 'host9', 'host10', 'host11', 'host12', 'host13', 'host14', 'host15', 'host16', 'host17', 'host18', 'host19', 'host20', 'host21', 'host22', 'host23', 'host24', 'host25', 'host26', 'host27', 'host28', 'host29', 'host30', 'host31', 'host32', 'host33', 'host34', 'host35', 'host36', 'host37', 'host38', 'host39', 'host40', 'host41', 'host42', 'host43', 'host44', 'host45', 'host46', 'host47', 'host48', 'host49', 'host50', 'host51', 'host52', 'host53', 'host54', 'host55', 'host56', 'host57', 'host58', 'host59', 'host60', 'host61', 'host62', 'host63', 'host64', 'host65', 'host66', 'host67', 'host68', 'host69', 'host70', 'host71', 'host72', 'host73', 'host74', 'host75', 'host76', 'host77', 'host78', 'host79', 'host80', 'host81', 'host82', 'host83', 'host84', 'host85', 'host86', 'host87', 'host88', 'host89', 'host90', 'host91', 'host92', 'host93', 'host94', 'host95', 'host96', 'host97', 'host98', 'host99']
+['host1', 'host2', 'host3', 'host4', 'host5', 'host6', 'host7', 'host8', 'host9', 'host10', 'host11', 'host12', 'host13', 'host14', 'host15', 'host16', 'host17', 'host18', 'host19', 'host20', 'host21', 'host22', 'host23', 'host24', 'host25', 'host26', 'host27', 'host28', 'host29', 'host30', 'host31', 'host32', 'host33', 'host34', 'host35', 'host36', 'host37', 'host38', 'host39', 'host40', 'host41', 'host42', 'host43', 'host44', 'host45', 'host46', 'host47', 'host48', 'host49', 'host50', 'host51', 'host52', 'host53', 'host54', 'host55', 'host56', 'host57', 'host58', 'host59', 'host60', 'host61', 'host62', 'host63', 'host64', 'host65', 'host66', 'host67', 'host68', 'host69', 'host70', 'host71', 'host72', 'host73', 'host74', 'host75', 'host76', 'host77', 'host78', 'host79', 'host80', 'host81', 'host82', 'host83', 'host84', 'host85', 'host86', 'host87', 'host88', 'host89', 'host90', 'host91', 'host92', 'host93', 'host94', 'host95', 'host96', 'host97', 'host98', 'host99','host100']
 host at  www.google.com  ping is good :  0% loss
 host at  www.yahoo.com  ping is good :  0% loss
 host at  www.nosuchxyz.com  is not normal. ping status code not ok , please check !
