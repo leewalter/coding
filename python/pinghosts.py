@@ -8,6 +8,13 @@ https://github.com/ktbyers/netmiko/blob/develop/examples/simple_connection/simpl
 '''
 import os, sys, re
 
+# if list from host1 to host100, then can generate them with list comprehension,
+#sample_host_list = [ "host"+str(i) for i in range(1,100)]
+#print(sample_host_list)
+
+hostlist = ["www.google.com", "www.yahoo.com", "www.nosuchxyz.com"]
+loss_regex = re.compile(r'(\(0% loss\))')  # any worst than "(0% loss)" is considered failure !
+
 def islive(h):
     outfile = " > ping_result.txt"
     cmd="ping -n 1 " + h + outfile # save ping -n 1 <hostname> outputs to match in regex later
@@ -17,23 +24,23 @@ def islive(h):
     #print("status_code is " , status_code)
     return (status_code) # return integer status = 0 if ping runs ok, = 1 if no such DNS, etc, errors
 
-# if list from host1 to host100, then can generate them with list comprehension,
-sample_host_list = [ "host"+str(i) for i in range(1,100)]
-print(sample_host_list)
-
-hostlist = ["www.google.com", "www.yahoo.com", "www.nosuchxyz.com"]
-loss_regex = re.compile(r'(0% loss)')  # any less than 0% is considered failure !
-
 for i in range(len(hostlist)):
+
     if islive(hostlist[i]) == 1:
         #something wrong, e.g. no DNS name, failure, will flag and no need to match regex
         print("host at ", hostlist[i], " is not normal. ping status code not ok , please check !")
-    else: # status_code == 0, so check regex
+
+    else: # status_code == 0, so check regex if any match
 
         with open("ping_result.txt") as f:
             result = f.read()
-            match = loss_regex.search(result)
-            print("host at ", hostlist[i], " ping is good : ",  match.group())
+            match = loss_regex.findall(result)
+            #print(match)
+            #print(len(match))
+            if len(match) > 0:  # good if a match to "(0% loss)"
+                print("host at ", hostlist[i], " ping is good : ",  match[0])
+            else: # found NO match for (0% loss)
+                print("host at ", hostlist[i], " ping is NOT good : ")
 
 '''
 case 1: when ping is good, status code = 0
