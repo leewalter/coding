@@ -14,7 +14,7 @@ def gradingStudents(grades):
     # If the difference between the  and the next multiple 5 of  is less than 3, round  up to the next multiple of 5 .
     # If the value of  is less than 38 , no rounding occurs as the result will still be a failing grade.
     #
-
+    # use divmod to get both divisor and modulus easily
     for i in range(len(grades)):
         if grades[i] < 38:
             continue
