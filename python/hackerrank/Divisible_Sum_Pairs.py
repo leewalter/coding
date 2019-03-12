@@ -10,6 +10,7 @@ import sys
 from itertools import combinations 
 
 # Complete the divisibleSumPairs function below.
+# use combinations to find ALL combo
 def divisibleSumPairs(n, k, ar):
     count = 0 
     combo = list(combinations(ar,2)) # find all combo
