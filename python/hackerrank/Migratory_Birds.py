@@ -13,7 +13,7 @@ import collections
 def migratoryBirds(arr):
     type1 = 0
     count1 = 0
-
+    # use collections.Counter and most_common(5) 
     c= collections.Counter(arr)
     for type, count in c.most_common(5):
         print(type, count)
