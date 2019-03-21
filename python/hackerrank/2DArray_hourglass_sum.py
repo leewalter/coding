@@ -1,6 +1,8 @@
 '''
 https://www.hackerrank.com/challenges/2d-array/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays
 array can have +ve or -ve integers inside, always 6x6
+my code Snippets :
+https://www.hackerrank.com/snippets/a04d11c1-9ed6-4ac9-9cd9-af1c4901d189/quietwalters-snippet-from-2d-array-ds
 '''
 
 #!/bin/python3
