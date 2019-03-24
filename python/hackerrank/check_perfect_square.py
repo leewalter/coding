@@ -1,5 +1,7 @@
 '''
 https://www.hackerrank.com/challenges/sherlock-and-squares/submissions/code/102921740
+timeouts in some large test cases at hackerrank, e.g.100000 with very large integer range
+
 '''
 
 #!/bin/python3
